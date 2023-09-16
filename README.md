@@ -1,5 +1,8 @@
 # Taxi demand prediction
 
+[![Deploy Next.js site to Pages](https://github.com/marcusholmgren/taxi_demand_prediction/actions/workflows/nextjs.yml/badge.svg)](https://github.com/marcusholmgren/taxi_demand_prediction/actions/workflows/nextjs.yml)
+
+
 Machine Learning project that predicts taxi rides in New York City 🚕
 
 ## Setup
