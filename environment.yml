@@ -3,3 +3,8 @@ channels:
   - defaults
 dependencies:
   - python=3.11.5=hb885b13_0
+  - jupyter
+  - jupyterlab
+  - pandas
+  - pyarrow
+
