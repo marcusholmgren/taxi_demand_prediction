@@ -7,4 +7,5 @@ dependencies:
   - jupyterlab
   - pandas
   - pyarrow
-
+  - tqdm
+  - plotly
