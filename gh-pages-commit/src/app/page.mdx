@@ -1,9 +1,22 @@
 import { SparkleIcon } from '@/components/SparkleIcon'
 
-export { Layout as default } from '@/components/Layout'
+import { Layout } from '@/components/Layout'
+
+export default function Page(props) {
+    return (<Layout {...props} />)
+}
 
 ---
+![](@/images/visualize-training_data.png)
 
+## Commit v0.0.2 {{  date: '2023-09-24T21:05Z' }}
+
+### <SparkleIcon /> Visualize training data
+
+Several new Jupyter notebooks were added to the project. They are steps for gathering, cleaning, and transforming the training and test data.
+Lastly, the data is visualized to get a better understanding of what we're working with.
+
+---
 ![](@/images/initial-commit.jpg)
 
 ## Commit v0.0.1 {{  date: '2023-09-15T22:05Z' }}
