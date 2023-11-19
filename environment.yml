@@ -11,3 +11,4 @@ dependencies:
   - plotly
   - scikit-learn
   - xgboost
+  - lightgbm
