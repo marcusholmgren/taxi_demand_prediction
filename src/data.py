@@ -71,7 +71,7 @@ def load_raw_data(
                 # download the file from the NYC website
                 print(f'Downloading file {year}-{month:02d}')
                 download_one_file_of_raw_data(year, month)
-            except:
+            except ValueError:
                 print(f'{year}-{month:02d} file is not available')
                 continue
         else:
@@ -193,7 +193,7 @@ def transform_ts_data_into_features_and_target(
         features_one_location['pickup_location_id'] = location_id
 
         # numpy -> pandas
-        targets_one_location = pd.DataFrame(y, columns=[f'target_rides_next_hour'])
+        targets_one_location = pd.DataFrame(y, columns=['target_rides_next_hour'])
 
         # concatenate results
         features = pd.concat([features, features_one_location])
