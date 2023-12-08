@@ -9,3 +9,13 @@ dependencies:
   - pyarrow
   - tqdm
   - plotly
+  - scikit-learn
+  - xgboost
+  - lightgbm
+  - optuna
+
+# pip packages
+  - pip:
+      - ruff
+      - optuna
+

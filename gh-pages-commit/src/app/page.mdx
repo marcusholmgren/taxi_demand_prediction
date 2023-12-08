@@ -7,7 +7,25 @@ export default function Page(props) {
 }
 
 ---
-![](@/images/visualize-training_data.png)
+![](@/images/hyperparameter-tuning.jpg)
+
+## Commit v0.0.3 {{  date: '2023-12-08T19:44Z' }}
+
+Training with two ML models to find the optimal framework for accuracy and training speed.
+
+[XGBoost](https://xgboost.ai), an ensemble learning algorithm, stands out for its efficiency and accuracy. It builds upon decision trees, iteratively refining predictions and reducing errors.
+[LightGBM](https://lightgbm.readthedocs.io/en/latest/), another ensemble technique, utilizes a leaf-wise growth strategy, resulting in faster training and lighter models compared to XGBoost.
+
+However, the performance of these models can be further enhanced through feature engineering and hyperparameter tuning.
+Feature engineering involves transforming and creating new features from existing data to capture relevant patterns and improve model interpretability.
+Hyperparameter tuning, on the other hand, involves selecting the optimal values for the model's parameters to optimize its performance.
+
+Hyperparameter tuning involves optimizing parameters like learning rate, regularization, and tree depth.
+[Optuna](https://optuna.org) an open source hyperparameter optimization framework to automate hyperparameter search
+
+
+---
+![](@/images/visualize-training_data.jpg)
 
 ## Commit v0.0.2 {{  date: '2023-09-24T21:05Z' }}
 
