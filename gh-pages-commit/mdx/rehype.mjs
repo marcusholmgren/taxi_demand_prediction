@@ -3,15 +3,22 @@ import { mdxAnnotations } from 'mdx-annotations'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { remarkRehypeWrap } from 'remark-rehype-wrap'
-import shiki from 'shiki'
+import {createCssVariablesTheme, getHighlighter} from 'shiki'
 import { visit } from 'unist-util-visit'
 
 let highlighter
 
+const myTheme = createCssVariablesTheme({
+  name: 'css-variables',
+  variablePrefix: '--shiki-',
+  variableDefaults: {},
+  fontStyle: true
+})
+
 function rehypeShiki() {
   return async (tree) => {
     highlighter =
-      highlighter ?? (await shiki.getHighlighter({ theme: 'css-variables' }))
+      highlighter ?? (await getHighlighter({ themes: [myTheme] }))
 
     visit(tree, 'element', (node, _nodeIndex, parentNode) => {
       if (node.tagName === 'code' && parentNode.tagName === 'pre') {
