@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="relative isolate flex flex-auto flex-col items-center justify-center overflow-hidden bg-gray-950 text-center">
       <svg
         aria-hidden="true"
-        className="absolute left-1/2 top-[-10vh] -z-10 h-[120vh] w-[120vw] min-w-[60rem] -translate-x-1/2"
+        className="absolute top-[-10vh] left-1/2 -z-10 h-[120vh] w-[120vw] min-w-[60rem] -translate-x-1/2"
       >
         <defs>
           <radialGradient id="gradient" cy="0%">
@@ -20,7 +20,7 @@ export default function NotFound() {
       <StarField className="sm:-mt-16" />
 
       <p className="font-display text-4xl/tight font-light text-white">404</p>
-      <h1 className="mt-4 font-display text-xl/8 font-semibold text-white">
+      <h1 className="font-display mt-4 text-xl/8 font-semibold text-white">
         Page not found
       </h1>
       <p className="mt-2 text-sm/6 text-gray-300">
