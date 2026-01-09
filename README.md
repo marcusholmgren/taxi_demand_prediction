@@ -25,7 +25,7 @@ conda env create -f environment.yml
 Activate the environment:
 
 ```bash
-conda activate taxi_demand_prediction
+conda activate taxi_demand_predictor
 ```
 
 Deactivate the environment:

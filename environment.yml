@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - python=3.11.5=hb885b13_0
+  - python_dotenv
   - jupyter
   - jupyterlab
   - pandas
@@ -18,4 +19,4 @@ dependencies:
   - pip:
       - ruff
       - optuna
-
+      - hopsworks
