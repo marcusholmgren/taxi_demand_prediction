@@ -65,8 +65,6 @@ jobs:
       - name: Setup Pages
         id: configure-pages
         uses: actions/configure-pages@v5
-        # Removed working-directory as it can cause issues with this action
-        # and we are managing the Next.js config manually.
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -85,8 +83,9 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
-          # Use the outputs from configure-pages, or fallback to repo name if empty
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.configure-pages.outputs.base_path || format('/{0}', github.event.repository.name) }}
+          # Ensure NEXT_PUBLIC_BASE_PATH does NOT have a trailing slash
+          # and is empty if it's just '/'
+          NEXT_PUBLIC_BASE_PATH: ${{ (steps.configure-pages.outputs.base_path == '/' && '') || steps.configure-pages.outputs.base_path }}
           BASE_URL: ${{ steps.configure-pages.outputs.base_url }}
 
       - name: Upload artifact
