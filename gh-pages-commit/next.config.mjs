@@ -18,8 +18,8 @@ const nextConfig = {
   output: 'export',
   // Use NEXT_PUBLIC_BASE_PATH for GitHub Pages deployment, default to empty for local dev.
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  // Ensure assetPrefix is NOT set or matches basePath to avoid double prefixing
-  // assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  // Explicitly set assetPrefix to match basePath for static exports on GH Pages
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
     unoptimized: true,
