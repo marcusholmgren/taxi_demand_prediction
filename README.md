@@ -2,7 +2,6 @@
 
 [![Deploy Next.js site to Pages](https://github.com/marcusholmgren/taxi_demand_prediction/actions/workflows/nextjs.yml/badge.svg)](https://github.com/marcusholmgren/taxi_demand_prediction/actions/workflows/nextjs.yml)
 
-
 Machine Learning project that predicts taxi rides in New York City 🚕
 
 Marcus is working on a project to predict demand for taxis using time-series analysis and machine learning. His goal is to help taxi companies make more informed decisions about how many taxis to have on the road at any given time, and where to deploy them.
@@ -13,23 +12,42 @@ Marcus hopes that his work will help taxi companies to operate more efficiently,
 
 ## Setup
 
-This project uses [conda](https://docs.conda.io/en/latest/) to manage the environment. 
-You can install miniconda [here](https://docs.conda.io/en/latest/miniconda.html).
+This project uses [uv](https://github.com/astral-sh/uv) to manage the environment and dependencies.
 
-Install the dependencies from the conda environment:
+### Installation
+
+If you don't have `uv` installed, you can install it using:
 
 ```bash
-conda env create -f environment.yml
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Activate the environment:
+### Environment Setup
+
+Install the dependencies and create a virtual environment:
 
 ```bash
-conda activate taxi_demand_predictor
+uv sync
 ```
 
-Deactivate the environment:
+### Running Jupyter Notebooks
+
+To start Jupyter Lab and work with the notebooks:
 
 ```bash
-conda deactivate
+uv run jupyter lab
+```
+
+Alternatively, to run a specific notebook using the project's environment:
+
+```bash
+uv run jupyter notebook
+```
+
+### Development
+
+To run the main script:
+
+```bash
+uv run main.py
 ```

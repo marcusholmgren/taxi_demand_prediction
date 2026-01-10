@@ -67,6 +67,7 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           working-directory: ${{ env.working-directory }}
+          static_site_generator: other
 
       - name: Restore cache
         uses: actions/cache@v4
