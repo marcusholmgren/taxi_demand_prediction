@@ -2,23 +2,17 @@ import { toString } from 'mdast-util-to-string'
 import { mdxAnnotations } from 'mdx-annotations'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
+import rehypeUnwrapImages from 'rehype-unwrap-images'
 import { remarkRehypeWrap } from 'remark-rehype-wrap'
-import { createCssVariablesTheme, getSingletonHighlighter } from 'shiki'
+import shiki from 'shiki'
 import { visit } from 'unist-util-visit'
 
 let highlighter
 
-const myTheme = createCssVariablesTheme({
-  name: 'css-variables',
-  variablePrefix: '--shiki-',
-  variableDefaults: {},
-  fontStyle: true,
-})
-
 function rehypeShiki() {
   return async (tree) => {
     highlighter =
-      highlighter ?? (await getSingletonHighlighter({ themes: [myTheme] }))
+      highlighter ?? (await shiki.getHighlighter({ theme: 'css-variables' }))
 
     visit(tree, 'element', (node, _nodeIndex, parentNode) => {
       if (node.tagName === 'code' && parentNode.tagName === 'pre') {
@@ -49,6 +43,7 @@ function rehypeShiki() {
 export const rehypePlugins = [
   mdxAnnotations.rehype,
   rehypeSlug,
+  rehypeUnwrapImages,
   [rehypeAutolinkHeadings, { behavior: 'wrap', test: ['h2'] }],
   rehypeShiki,
   [

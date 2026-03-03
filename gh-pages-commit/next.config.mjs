@@ -15,14 +15,7 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  // Use NEXT_PUBLIC_BASE_PATH for GitHub Pages deployment, default to empty for local dev.
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  images: {
-    unoptimized: true,
-  },
-  reactStrictMode: true,
 }
 
 export default withMDX(nextConfig)
